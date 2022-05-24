@@ -1,0 +1,21 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(40, 40, 40);
+}
+
+.board{
+   display: flex;
+   flex-wrap: wrap;
+   width: 600px;
+   height: 600px;
+   border: 1px solid green;  
+}
