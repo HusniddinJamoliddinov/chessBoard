@@ -34,15 +34,19 @@ function draw(selected) {
     // }
 
     for (let i = selected; i < 64; i = i + 9) {
+      if(i % 8 == 0 || i % 7 == 0) break;
       boxes[i].style.backgroundColor = "yellow";
     }
     for (let i = selected; i < 64; i = i + 7) {
+      if(i % 8 == 0 || i % 7 == 0) break;
       boxes[i].style.backgroundColor = "yellow";
     }
     for (let i = selected; i > -1; i = i - 9) {
+      if(i % 8 == 0 || i % 7 == 0) break;
       boxes[i].style.backgroundColor = "yellow";
     }
     for (let i = selected; i > -1; i = i - 7) {
+      if(i % 8 == 0 || i % 7 == 0) break;
       boxes[i].style.backgroundColor = "yellow";
     }
   }
