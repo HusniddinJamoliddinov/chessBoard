@@ -18,15 +18,23 @@ const boxes = document.querySelectorAll(".box");
 console.log(boxes);
 
 for (let i = 0; i < boxes.length; i++) {
-  boxes[i].setAttribute("onclick", `draw(${(i - (i % 8)) / 8}, ${i % 8})`);
+  boxes[i].setAttribute("onclick", `draw(${i})`);
 }
 
-function draw(row, column) {
-  if (boxes[row * 8 + column].style.backgroundColor == "white") {
-    let selected = row * 8 + column;
-    for (let i = 0; i < 8; i = i + 7) {
-      if(i + row == 8 || i + column == 8) break;
-      boxes[i + row, i + column].style.backgroundColor = "yellow";
+function draw(selected) {
+  if (boxes[selected].style.backgroundColor == "white") {
+    // for (let i = 0; i < 8; i++) {
+    //   if (i + row == 8 || i + column == 8) continue;
+    //   boxes[(i + row , i + column)].style.backgroundColor = "yellow";
+    // }
+
+    // for (let i = 7; i < -1; i--) {
+    //   if (i + row == 0 || i + column == 0) continue;
+    //   boxes[(i + row, i + column)].style.backgroundColor = "yellow";
+    // }
+
+    for (let i = selected; i < 64; i = i + 9) {
+      boxes[i].style.backgroundColor = "yellow";
     }
     for (let i = selected; i < 64; i = i + 7) {
       boxes[i].style.backgroundColor = "yellow";
@@ -34,8 +42,8 @@ function draw(row, column) {
     for (let i = selected; i > -1; i = i - 9) {
       boxes[i].style.backgroundColor = "yellow";
     }
-    // for (let i = selected; i > -1; i = i - 7) {
-    //   boxes[i].style.backgroundColor = "yellow";
-    // }
+    for (let i = selected; i > -1; i = i - 7) {
+      boxes[i].style.backgroundColor = "yellow";
+    }
   }
 }
