@@ -23,30 +23,21 @@ for (let i = 0; i < boxes.length; i++) {
 
 function draw(selected) {
   if (boxes[selected].style.backgroundColor == "white") {
-    // for (let i = 0; i < 8; i++) {
-    //   if (i + row == 8 || i + column == 8) continue;
-    //   boxes[(i + row , i + column)].style.backgroundColor = "yellow";
-    // }
-
-    // for (let i = 7; i < -1; i--) {
-    //   if (i + row == 0 || i + column == 0) continue;
-    //   boxes[(i + row, i + column)].style.backgroundColor = "yellow";
-    // }
 
     for (let i = selected; i < 64; i = i + 9) {
-      if(i % 8 == 0 || i % 7 == 0) break;
+      if (i % 8 == 0 || i % 7 == 0) break;
       boxes[i].style.backgroundColor = "yellow";
     }
     for (let i = selected; i < 64; i = i + 7) {
-      if(i % 8 == 0 || i % 7 == 0) break;
+      if (i % 8 == 0 || i % 7 == 0) break;
       boxes[i].style.backgroundColor = "yellow";
     }
     for (let i = selected; i > -1; i = i - 9) {
-      if(i % 8 == 0 || i % 7 == 0) break;
+      if (i % 8 == 0 || i % 7 == 0) break;
       boxes[i].style.backgroundColor = "yellow";
     }
     for (let i = selected; i > -1; i = i - 7) {
-      if(i % 8 == 0 || i % 7 == 0) break;
+      if (i % 8 == 0 || i % 7 == 0) break;
       boxes[i].style.backgroundColor = "yellow";
     }
   }
